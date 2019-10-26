@@ -31,7 +31,12 @@
 
 	};
 
-
+    firmware {
+        optee {
+            compatible = "linaro,optee-tz";
+            method = "smc";
+        };
+    };
 };
 
 &adc1 {
@@ -149,7 +154,8 @@
 
 
 &usbotg1 {
-	dr_mode = "host";
+	dr_mode = "peripheral";
+	disable-over-current;
 	status = "okay";
 };
 
